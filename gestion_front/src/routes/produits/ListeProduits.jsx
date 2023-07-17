@@ -1,4 +1,5 @@
 import { useProduitsListe } from "../../hooks/useProduitsListe";
+import Button from "../../components/UI/Button";
 
 function ListeProduits() {
     const [
@@ -7,7 +8,7 @@ function ListeProduits() {
         hasNext, 
         hasPrevious,
         goNext,
-        goPreivous
+        goPrevious
     ] = useProduitsListe();
 
     const listeProduits = produits?.map((produit) => (
@@ -19,6 +20,19 @@ function ListeProduits() {
     return (
         <>
             {listeProduits && listeProduits}
+            <Button 
+                disabled={!hasPrevious}
+                onClick={goPrevious}
+            >
+                Previous
+            </Button>
+            <span>{pageNumber}</span>
+            <Button 
+                disabled={!hasNext}
+                onClick={goNext}
+            >
+                Next
+            </Button>
         </>
     );
 }

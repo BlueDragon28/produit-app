@@ -17,9 +17,8 @@ export function useProduitsListe() {
         obtenirListeProduits(pageNumber)
             .then(data => {
                 setProduits(data);
-                setHasNext(data.next ? true : false);
-                setHasPrevious(data.previous ? true : false);
-                console.log(data);
+                setHasNext(data?.next ? true : false);
+                setHasPrevious(data?.previous ? true : false);
             })
             .catch(err => {
                 console.log(err);
