@@ -1,5 +1,6 @@
 import { useProduitsListe } from "../../hooks/useProduitsListe";
 import Button from "../../components/UI/Button";
+import ProduitElement from "../../components/produit/ProduitElement";
 
 function ListeProduits() {
     const [
@@ -12,9 +13,7 @@ function ListeProduits() {
     ] = useProduitsListe();
 
     const listeProduits = produits?.map((produit) => (
-        <div key={produit.id}>
-            {produit.name} - {produit.prix_unitaire}€
-        </div>
+        <ProduitElement key={produit.id} produit={produit}/>
     ));
 
     return (
