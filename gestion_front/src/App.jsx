@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RouteIndex from "./routes/RouteIndex";
-import ListeProduits from "./routes/produits/ListeProduits";
+import Produits from "./routes/produits/Produits";
 
 import './App.css';
 
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <ListeProduits/>
+                element: <Produits/>
             }
         ]
     }

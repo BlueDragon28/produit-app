@@ -1,7 +1,6 @@
 import { useProduitsListe } from "../../hooks/useProduitsListe";
-import Button from "../../components/UI/Button";
-import ProduitElement from "../../components/produit/ProduitElement";
-import Paginator from "../../components/produit/Paginator";
+import ProduitElement from "./ProduitElement";
+import Paginator from ".//Paginator";
 
 function ListeProduits() {
     const [
