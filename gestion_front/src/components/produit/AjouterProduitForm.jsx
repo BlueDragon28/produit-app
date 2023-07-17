@@ -1,6 +1,19 @@
 import { useState } from "react";
 import Button from "../UI/Button";
 
+function validerProduit(produit) {
+    if (!produit?.nom.length ||
+            !produit?.prix_unitaire.length ||
+            !produit?.quantite.length ||
+            !parseFloat(produit?.prix_unitaire) ||
+            !parseInt(produit?.quantite)) {
+
+        return false;
+    }
+
+    return true;
+}
+
 function AjouterProduitForm({ 
     id, 
     onCancel,
@@ -9,14 +22,14 @@ function AjouterProduitForm({
     const [produit, setProduit] = useState({
         nom: "",
         prix_unitaire: "",
-        quantitie: ""
+        quantite: ""
     });
 
     function resetInputs() {
         setProduit({
             nom: "",
             prix_unitaire: "",
-            quantitie: ""
+            quantite: ""
         });
     }
 
@@ -29,13 +42,13 @@ function AjouterProduitForm({
     }
 
     function onQuantiteChanged(event) {
-        setProduit(produit => ({...produit, quantitie: event.target.value}));
+        setProduit(produit => ({...produit, quantite: event.target.value}));
     }
 
     function onFormSubmited(event) {
         event.preventDefault();
 
-        onSubmit && onSubmit(produit) && resetInputs();
+        validerProduit(produit) && onSubmit && onSubmit(produit) && resetInputs();
     }
 
     return (
@@ -66,7 +79,7 @@ function AjouterProduitForm({
                     type="text" 
                     name="quantite"
                     onChange={onQuantiteChanged}
-                    value={produit.quantitie}
+                    value={produit.quantite}
                 />
             </div>
             <Button onClick={onCancel}>Annuler</Button>
