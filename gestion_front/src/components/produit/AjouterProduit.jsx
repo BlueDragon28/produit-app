@@ -13,12 +13,20 @@ function AjouterProduit() {
         setIsUnfolded(false);
     }
 
+    function onFormSubmited(produit) {
+        console.log(produit);
+        return true;
+    }
+
     return (
         <>
             {!isUnfolded && 
                 <Button onClick={onFold}>Ajouter Produit</Button>}
             {isUnfolded && 
-                <AjouterProduitForm onCancel={onUnfold}/>}
+                <AjouterProduitForm 
+                    onCancel={onUnfold}
+                    onSubmit={onFormSubmited}
+                />}
         </>
     );
 }
