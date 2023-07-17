@@ -9,12 +9,19 @@ function Produits() {
         hasNext, 
         hasPrevious,
         goNext,
-        goPrevious
+        goPrevious,
+        updateCurrentPage
     ] = useProduitsListe();
+
+    function onProduitCreated() {
+        updateCurrentPage && updateCurrentPage();
+    }
 
     return (
         <>
-            <AjouterProduit/>
+            <AjouterProduit 
+                onProduitCreated={onProduitCreated}
+            />
             <ListeProduits
                 produits={produits}
                 pageNumber={pageNumber}

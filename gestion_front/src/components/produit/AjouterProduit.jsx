@@ -4,7 +4,7 @@ import AjouterProduitForm from "./AjouterProduitForm";
 
 const createEndpoint = "/api/produits";
 
-function AjouterProduit() {
+function AjouterProduit({ onProduitCreated }) {
     const [isUnfolded, setIsUnfolded] = useState(false);
 
     function onFold() {
@@ -32,7 +32,9 @@ function AjouterProduit() {
     }
 
     async function onFormSubmited(produit) {
-        return await soumettreProduit(produit);
+        const result = await soumettreProduit(produit);
+        result && onProduitCreated();
+        return result;
     }
 
     return (
