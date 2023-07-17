@@ -2,6 +2,8 @@ import { useState } from "react";
 import Button from "../UI/Button";
 import AjouterProduitForm from "./AjouterProduitForm";
 
+const createEndpoint = "/api/produits";
+
 function AjouterProduit() {
     const [isUnfolded, setIsUnfolded] = useState(false);
 
@@ -13,8 +15,23 @@ function AjouterProduit() {
         setIsUnfolded(false);
     }
 
+    async function soumettreProduit(produit) {
+        const response = await fetch(
+            createEndpoint,
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(produit)
+            }
+        )
+        const jsonResponse = await response.json();
+        console.log(jsonResponse);
+    }
+
     function onFormSubmited(produit) {
-        console.log(produit);
+        soumettreProduit(produit);
         return true;
     }
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import Button from "../UI/Button";
 
 function validerProduit(produit) {
-    if (!produit?.nom.length ||
+    if (!produit?.name.length ||
             !produit?.prix_unitaire.length ||
             !produit?.quantite.length ||
             !parseFloat(produit?.prix_unitaire) ||
@@ -20,29 +20,29 @@ function AjouterProduitForm({
     onSubmit
 }) {
     const [produit, setProduit] = useState({
-        nom: "",
+        name: "",
         prix_unitaire: "",
         quantite: ""
     });
 
     function resetInputs() {
         setProduit({
-            nom: "",
+            name: "",
             prix_unitaire: "",
             quantite: ""
         });
     }
 
-    function onNomChanged(event) {
-        setProduit(produit => ({...produit, nom: event.target.value}));
+    function onNameChanged(event) {
+        setProduit(produit => ({...produit, name: event.target.value.trim()}));
     }
 
     function onPrixChanged(event) {
-        setProduit(produit => ({...produit, prix_unitaire: event.target.value}));
+        setProduit(produit => ({...produit, prix_unitaire: event.target.value.trim()}));
     }
 
     function onQuantiteChanged(event) {
-        setProduit(produit => ({...produit, quantite: event.target.value}));
+        setProduit(produit => ({...produit, quantite: event.target.value.trim()}));
     }
 
     function onFormSubmited(event) {
@@ -58,8 +58,8 @@ function AjouterProduitForm({
                 <input 
                     id={`nom-${id}`} 
                     type="text" 
-                    onChange={onNomChanged} 
-                    value={produit.nom}
+                    onChange={onNameChanged} 
+                    value={produit.name}
                 />
             </div>
             <div>
