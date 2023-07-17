@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RouteIndex from "./routes/RouteIndex";
+import ListeProduits from "./routes/produits/ListeProduits";
 
 import './App.css';
 
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <div>Hello Index</div>
+                element: <ListeProduits/>
             }
         ]
     }
