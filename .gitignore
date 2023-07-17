@@ -1,3 +1,31 @@
 .venv
 **/__pycache__
 db.sqlite3
+gestion_front/node_modules 
+gestion_front/package-lock.json
+
+# React .gitingore
+# Logs
+gestion_front/logs
+gestion_front/*.log
+gestion_front/npm-debug.log*
+gestion_front/yarn-debug.log*
+gestion_front/yarn-error.log*
+gestion_front/pnpm-debug.log*
+gestion_front/lerna-debug.log*
+
+gestion_front/node_modules
+gestion_front/dist
+gestion_front/dist-ssr
+gestion_front/*.local
+
+# Editor directories and files
+gestion_front/.vscode/*
+gestion_front/!.vscode/extensions.json
+gestion_front/.idea
+gestion_front/.DS_Store
+gestion_front/*.suo
+gestion_front/*.ntvs*
+gestion_front/*.njsproj
+gestion_front/*.sln
+gestion_front/*.sw?
