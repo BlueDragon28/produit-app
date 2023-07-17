@@ -56,3 +56,19 @@ class APIViewsTest(APITestCase):
         self.assertIsNone(data_page2["next"])
         self.assertIsNotNone(data_page2["previous"])
         self.assertEqual(len(data_page2["results"]), 6)
+
+    def test_recherche_produits(self):
+        noms = (
+            "Cable USB",
+            "Ampoule RGB"
+        )
+
+        for nom in noms:
+            Produit(name=nom, prix_unitaire=Decimal("5.99"), quantite=1).save()
+
+        url = reverse("produits-list")
+        recherche = "Ampoule"
+        response = self.client.get(url + f"?search={recherche}")
+        self.assertEqual(response.status_code, 200)
+        data = response.data
+        self.assertEqual(data["count"], 1)
