@@ -2,16 +2,14 @@ import { useProduitsListe } from "../../hooks/useProduitsListe";
 import ProduitElement from "./ProduitElement";
 import Paginator from ".//Paginator";
 
-function ListeProduits() {
-    const [
-        produits, 
-        pageNumber,
-        hasNext, 
-        hasPrevious,
-        goNext,
-        goPrevious
-    ] = useProduitsListe();
-
+function ListeProduits({
+    produits,
+    pageNumber,
+    hasNext,
+    hasPrevious,
+    onNext,
+    onPrevious
+}) {
     const listeProduits = produits?.map((produit) => (
         <ProduitElement key={produit.id} produit={produit}/>
     ));
@@ -22,9 +20,9 @@ function ListeProduits() {
             <Paginator 
                 pageNumber={pageNumber}
                 hasPrevious={hasPrevious}
-                onPrevious={goPrevious}
+                onPrevious={onPrevious}
                 hasNext={hasNext}
-                onNext={goNext}
+                onNext={onNext}
             />
         </>
     );
