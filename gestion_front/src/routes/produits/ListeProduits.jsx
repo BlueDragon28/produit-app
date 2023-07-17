@@ -1,6 +1,7 @@
 import { useProduitsListe } from "../../hooks/useProduitsListe";
 import Button from "../../components/UI/Button";
 import ProduitElement from "../../components/produit/ProduitElement";
+import Paginator from "../../components/produit/Paginator";
 
 function ListeProduits() {
     const [
@@ -19,19 +20,13 @@ function ListeProduits() {
     return (
         <>
             {listeProduits && listeProduits}
-            <Button 
-                disabled={!hasPrevious}
-                onClick={goPrevious}
-            >
-                Previous
-            </Button>
-            <span>{pageNumber}</span>
-            <Button 
-                disabled={!hasNext}
-                onClick={goNext}
-            >
-                Next
-            </Button>
+            <Paginator 
+                pageNumber={pageNumber}
+                hasPrevious={hasPrevious}
+                onPrevious={goPrevious}
+                hasNext={hasNext}
+                onNext={goNext}
+            />
         </>
     );
 }
