@@ -8,4 +8,4 @@ class Produit(Model):
     quantite = models.IntegerField(null=False, validators=[MinValueValidator(0, "La  quantité de produit doit être égale ou supérieur à 0")])
 
     class Meta:
-        ordering = ["id"]
+        ordering = ["-id"]
