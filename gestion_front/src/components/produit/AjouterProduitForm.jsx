@@ -48,7 +48,8 @@ function AjouterProduitForm({
     function onFormSubmited(event) {
         event.preventDefault();
 
-        validerProduit(produit) && onSubmit && onSubmit(produit) && resetInputs();
+        validerProduit(produit) && onSubmit && onSubmit(produit)
+            .then(result => result && resetInputs());
     }
 
     return (

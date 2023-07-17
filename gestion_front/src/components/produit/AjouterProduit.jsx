@@ -28,11 +28,11 @@ function AjouterProduit() {
         )
         const jsonResponse = await response.json();
         console.log(jsonResponse);
+        return response.status === 201;
     }
 
-    function onFormSubmited(produit) {
-        soumettreProduit(produit);
-        return true;
+    async function onFormSubmited(produit) {
+        return await soumettreProduit(produit);
     }
 
     return (
