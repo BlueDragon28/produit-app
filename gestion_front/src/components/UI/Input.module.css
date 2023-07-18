@@ -1,0 +1,21 @@
+.input-control {
+    display: block;
+    margin: 0;
+}
+
+.input-control input {
+    width: 100%;
+    background-color: #e9ecef;
+    border: 1.5px solid #9a8c98;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 7px 0;
+}
+
+.input-control input:hover,
+.input-control input:active,
+.input-control input:focus {
+    outline: none;
+    border: 1.5px solid #adb5bd;
+    background-color: white;
+}
