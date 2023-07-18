@@ -15,13 +15,13 @@ function Paginator({
                 className={styles["button-pagination"]}
                 disabled={!hasPrevious} 
                 onClick={onPrevious}
-            >Previous</Button>
+            >Précédent</Button>
             <div className={styles["page-number"]}>{pageNumber}</div>
             <Button 
                 className={styles["button-pagination"]}
                 disabled={!hasNext} 
                 onClick={onNext}
-            >Next</Button>
+            >Suivant</Button>
         </div>
     );
 }
