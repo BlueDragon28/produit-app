@@ -31,6 +31,7 @@ function ProduitDetail() {
             <div>{name}</div>
             <div>Prix: {prix_unitaire}€</div>
             <div>Quantitie: {quantite}</div>
+            <Link to="..">Retour</Link>
             <Button onClick={supprimerProduit}>Supprimer</Button>
             <Link to="edit">Éditer</Link>
         </>
