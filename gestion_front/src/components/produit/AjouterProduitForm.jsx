@@ -17,12 +17,13 @@ function validerProduit(produit) {
 function AjouterProduitForm({ 
     id, 
     onCancel,
-    onSubmit
+    onSubmit,
+    data
 }) {
     const [produit, setProduit] = useState({
-        name: "",
-        prix_unitaire: "",
-        quantite: ""
+        name: data?.name ? data.name : "",
+        prix_unitaire: data?.prix_unitaire ? data.prix_unitaire : "",
+        quantite: data?.quantite ? data.quantite.toString() : ""
     });
 
     function resetInputs() {

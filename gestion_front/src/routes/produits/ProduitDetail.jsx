@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useProduitElement } from "../../hooks/useProduitElement";
 import Button from "../../components/UI/Button";
 
@@ -8,7 +8,7 @@ function ProduitDetail() {
     const produit = useProduitElement(produitID);
 
     if (!produit) {
-        return <></>
+        return <></>;
     }
 
     const { href, name, prix_unitaire, quantite } = produit;
@@ -32,6 +32,7 @@ function ProduitDetail() {
             <div>Prix: {prix_unitaire}€</div>
             <div>Quantitie: {quantite}</div>
             <Button onClick={supprimerProduit}>Supprimer</Button>
+            <Link to="edit">Éditer</Link>
         </>
     );
 }
