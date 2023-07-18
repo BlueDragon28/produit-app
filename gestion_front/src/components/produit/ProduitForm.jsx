@@ -69,15 +69,19 @@ function ProduitForm({
                     type="text"
                     onChange={onNameChanged}
                     value={produit.name}
+                    required
                 >Nom</Input>
             </div>
             <div>
                 <Input 
                     id={`prix-unitaire-${id}`} 
-                    type="text" 
+                    type="number" 
+                    min="0"
+                    step="0.01"
                     name="prix_unitaire"
                     onChange={onPrixChanged}
                     value={produit.prix_unitaire}
+                    required
                 >
                     Prix Unitaire
                 </Input>
@@ -85,10 +89,12 @@ function ProduitForm({
             <div>
                 <Input 
                     id={`quantitie-${id}`} 
-                    type="text" 
+                    type="number" 
+                    min="0"
                     name="quantite"
                     onChange={onQuantiteChanged}
                     value={produit.quantite}
+                    required
                 >
                     Quantité
                 </Input>
