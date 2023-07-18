@@ -1,0 +1,21 @@
+.button-module {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    background-color: #38b000;
+    border: 1.5px solid #9a8c98;
+    border-radius: 4px;
+}
+
+.button-module:hover,
+.button-module:active {
+    cursor: pointer;
+    background-color: #70e000;
+}
+
+.button-module:disabled {
+    cursor: inherit;
+    background-color: #4f772d;
+    color: black;
+}
