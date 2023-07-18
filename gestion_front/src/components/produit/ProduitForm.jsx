@@ -91,8 +91,8 @@ function ProduitForm({
                     value={produit.quantite}
                 />
             </div>
-            <Button onClick={onCancel}>Annuler</Button>
-            <Button>{submitText?.length ? submitText : "Ajouter Produit"}</Button>
+            <Button type="button" onClick={onCancel}>Annuler</Button>
+            <Button type="submit">{submitText?.length ? submitText : "Ajouter Produit"}</Button>
         </form>
     );
 }
