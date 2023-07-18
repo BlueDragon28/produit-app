@@ -7,7 +7,7 @@ function Button(props) {
     className && delete allProps.className;
 
     return (
-        <button className={`${styles["button-module"]} ${className ? className : ""}`} {...props}/>
+        <button className={`${styles["button-module"]} ${className ? className : ""}`} {...allProps}/>
     )
 }
 

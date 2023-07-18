@@ -1,0 +1,15 @@
+.paginator {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.page-number {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.button-pagination {
+    width: 0%;
+    flex-grow: 3;
+}
