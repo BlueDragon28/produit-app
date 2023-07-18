@@ -1,6 +1,6 @@
-import { useProduitsListe } from "../../hooks/useProduitsListe";
 import ProduitElement from "./ProduitElement";
-import Paginator from ".//Paginator";
+import Paginator from "./Paginator";
+import Card from "../UI/Card";
 
 function ListeProduits({
     produits,
@@ -15,7 +15,7 @@ function ListeProduits({
     ));
 
     return (
-        <>
+        <Card>
             {listeProduits && listeProduits}
             <Paginator 
                 pageNumber={pageNumber}
@@ -24,7 +24,7 @@ function ListeProduits({
                 hasNext={hasNext}
                 onNext={onNext}
             />
-        </>
+        </Card>
     );
 }
 

@@ -10,7 +10,7 @@ function ProduitElement({ produit }) {
             class={styles["produit-element"]}
             to={`produit/${id}`}
         >
-            {name} - {prix_unitaire}
+            <div>{name}</div> <div>{prix_unitaire}€</div>
         </Link>
     );
 }
