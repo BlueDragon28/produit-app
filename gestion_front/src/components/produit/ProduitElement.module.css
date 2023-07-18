@@ -1,0 +1,9 @@
+.produit-element {
+    cursor: pointer;
+    user-select: none;
+}
+
+.produit-element:active,
+.produit-element:hover {
+    background-color: grey;
+}
