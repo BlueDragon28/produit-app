@@ -1,7 +1,6 @@
-import { useState } from "react";
 import { useProduitElement } from "../../hooks/useProduitElement";
 import { useNavigate, useParams } from "react-router-dom";
-import AjouterProduitForm from "../../components/produit/AjouterProduitForm";
+import ProduitForm from "../../components/produit/ProduitForm";
 
 function ModificationProduit() {
     const navigate = useNavigate();
@@ -38,10 +37,11 @@ function ModificationProduit() {
     }
 
     return (
-        <AjouterProduitForm 
+        <ProduitForm 
             data={produit}
             onCancel={onCancel}
             onSubmit={onSubmit}
+            submitText="Modifier Produit"
         />
     );
 }

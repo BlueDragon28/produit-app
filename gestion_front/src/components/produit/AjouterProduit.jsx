@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../UI/Button";
-import AjouterProduitForm from "./AjouterProduitForm";
+import ProduitForm from "./ProduitForm";
 
 const createEndpoint = "/api/produits";
 
@@ -42,7 +42,7 @@ function AjouterProduit({ onProduitCreated }) {
             {!isUnfolded && 
                 <Button onClick={onFold}>Ajouter Produit</Button>}
             {isUnfolded && 
-                <AjouterProduitForm 
+                <ProduitForm 
                     onCancel={onUnfold}
                     onSubmit={onFormSubmited}
                 />}

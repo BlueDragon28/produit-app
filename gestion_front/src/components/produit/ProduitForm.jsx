@@ -14,11 +14,12 @@ function validerProduit(produit) {
     return true;
 }
 
-function AjouterProduitForm({ 
+function ProduitForm({ 
     id, 
     onCancel,
     onSubmit,
-    data
+    data,
+    submitText
 }) {
     const [produit, setProduit] = useState({
         name: data?.name ? data.name : "",
@@ -85,9 +86,9 @@ function AjouterProduitForm({
                 />
             </div>
             <Button onClick={onCancel}>Annuler</Button>
-            <Button>Ajouter Produit</Button>
+            <Button>{submitText?.length ? submitText : "Ajouter Produit"}</Button>
         </form>
     );
 }
 
-export default AjouterProduitForm;
+export default ProduitForm;
