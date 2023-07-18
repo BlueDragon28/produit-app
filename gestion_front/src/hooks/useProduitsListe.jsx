@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 
 const produitsListeEndpoint = "/api/produits";
 
-async function obtenirListeProduits(pageNumber) {
-    const response = await fetch(produitsListeEndpoint + `?page=${pageNumber}`);
+async function obtenirListeProduits(pageNumber, rechercheText) {
+    const response = await fetch(produitsListeEndpoint + 
+        `?page=${pageNumber}${rechercheText?.length ? `&search=${rechercheText}` : ""}`);
     return response.json();
 }
 
@@ -13,11 +14,12 @@ export function useProduitsListe() {
     const [hasPrevious, setHasPrevious] = useState(false);
     const [pageNumber, setPageNumber] = useState(1);
     const [allowUpdate, setAllowUpdate] = useState(true);
+    const [rechercheText, setRechercheText] = useState("");
 
     useEffect(() => {
         if (!allowUpdate) return;
 
-        obtenirListeProduits(pageNumber)
+        obtenirListeProduits(pageNumber, rechercheText)
             .then(data => {
                 setProduits(data);
                 setHasNext(data?.next ? true : false);
@@ -27,7 +29,7 @@ export function useProduitsListe() {
             .catch(err => {
                 console.log(err);
             });
-    }, [pageNumber, allowUpdate]);
+    }, [pageNumber, allowUpdate, rechercheText]);
 
     function goNext() {
         if (!hasNext) return;
@@ -47,6 +49,11 @@ export function useProduitsListe() {
         setAllowUpdate(true);
     }
 
+    function recherche(rechercheText) {
+        setRechercheText(rechercheText);
+        setAllowUpdate(true);
+    }
+
     return [
         produits?.results ? produits.results : null, 
         pageNumber,
@@ -54,6 +61,7 @@ export function useProduitsListe() {
         hasPrevious,
         goNext,
         goPrevious,
-        updateCurrentPage
+        updateCurrentPage,
+        recherche
     ];
 }
