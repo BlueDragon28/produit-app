@@ -13,7 +13,3 @@ class HREFProduitSerializer(HyperlinkedModelSerializer):
         model = Produit
         fields = ("href", "id", "name", "prix_unitaire", "quantite")
 
-class ProduitSerializer(ModelSerializer):
-    class Meta:
-        model = Produit
-        fields = ("id", "name", "prix_unitaire", "quantite")
