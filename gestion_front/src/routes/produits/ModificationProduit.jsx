@@ -1,6 +1,7 @@
 import { useProduitElement } from "../../hooks/useProduitElement";
 import { useNavigate, useParams } from "react-router-dom";
 import ProduitForm from "../../components/produit/ProduitForm";
+import Card from "../../components/UI/Card";
 
 function ModificationProduit() {
     const navigate = useNavigate();
@@ -37,12 +38,14 @@ function ModificationProduit() {
     }
 
     return (
-        <ProduitForm 
-            data={produit}
-            onCancel={onCancel}
-            onSubmit={onSubmit}
-            submitText="Modifier Produit"
-        />
+        <Card>
+            <ProduitForm 
+                data={produit}
+                onCancel={onCancel}
+                onSubmit={onSubmit}
+                submitText="Modifier Produit"
+            />
+        </Card>
     );
 }
 
