@@ -1,6 +1,10 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useProduitElement } from "../../hooks/useProduitElement";
 import Button from "../../components/UI/Button";
+import Card from "../../components/UI/Card";
+
+import styleButton from "../../components/UI/Button.module.css";
+import style from "./ProduitDetail.module.css";
 
 function ProduitDetail() {
     const navigate = useNavigate();
@@ -27,14 +31,16 @@ function ProduitDetail() {
     }
 
     return (
-        <>
-            <div>{name}</div>
-            <div>Prix: {prix_unitaire}€</div>
-            <div>Quantitie: {quantite}</div>
-            <Link to="..">Retour</Link>
-            <Button onClick={supprimerProduit}>Supprimer</Button>
-            <Link to="edit">Éditer</Link>
-        </>
+        <Card>
+            <h1 className={style["produit-nom"]}>{name}</h1>
+            <div className={style["produit-info"]}>Prix: {prix_unitaire}€</div>
+            <div className={style["produit-info"]}>Quantité: {quantite}</div>
+            <div className={style["button-container"]}>
+                <Link className={`${styleButton["button-module"]} ${style["button-link"]}`} to="..">Retour</Link>
+                <Button onClick={supprimerProduit}>Supprimer</Button>
+                <Link className={`${styleButton["button-module"]} ${style["button-link"]}`} to="edit">Éditer</Link>
+            </div>
+        </Card>
     );
 }
 
