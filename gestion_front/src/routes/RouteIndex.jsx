@@ -1,11 +1,10 @@
 import { Outlet } from "react-router-dom";
+import NavBar from "../components/UI/NavBar";
 
 function RouteIndex() {
     return (
         <>
-            <header>
-                <div>Gestion Produits</div>
-            </header>
+            <NavBar />
             <Outlet/>
         </>
     );
