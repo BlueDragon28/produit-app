@@ -50,6 +50,7 @@ function AjouterProduit({ onProduitCreated }) {
                 isError: false,
                 message: ""
             });
+            setIsUnfolded(false);
         }
 
         return response.status === 201;
