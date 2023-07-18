@@ -1,0 +1,8 @@
+.error-card {
+    background: #d00000;
+    padding: 15px;
+    margin: 5px 0 15px 0;
+    border-radius: 7px;
+    color: #e5e5e5;
+    text-transform: capitalize;
+}

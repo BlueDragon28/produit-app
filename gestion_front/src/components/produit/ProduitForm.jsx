@@ -6,8 +6,8 @@ function validerProduit(produit) {
     if (!produit?.name.length ||
             !produit?.prix_unitaire.length ||
             !produit?.quantite.length ||
-            !parseFloat(produit?.prix_unitaire) ||
-            !parseInt(produit?.quantite)) {
+            !(parseFloat(produit?.prix_unitaire) >= 0) ||
+            !(parseInt(produit?.quantite) >= 0)) {
 
         return false;
     }
