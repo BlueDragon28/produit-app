@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../UI/Button";
 import ProduitForm from "./ProduitForm";
+import Card from "../UI/Card";
 
 const createEndpoint = "/api/produits";
 
@@ -38,7 +39,7 @@ function AjouterProduit({ onProduitCreated }) {
     }
 
     return (
-        <>
+        <Card>
             {!isUnfolded && 
                 <Button onClick={onFold}>Ajouter Produit</Button>}
             {isUnfolded && 
@@ -46,7 +47,7 @@ function AjouterProduit({ onProduitCreated }) {
                     onCancel={onUnfold}
                     onSubmit={onFormSubmited}
                 />}
-        </>
+        </Card>
     );
 }
 

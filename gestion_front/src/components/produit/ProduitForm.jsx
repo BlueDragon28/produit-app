@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "../UI/Button";
+import Input from "../UI/Input";
 
 function validerProduit(produit) {
     if (!produit?.name.length ||
@@ -63,33 +64,34 @@ function ProduitForm({
     return (
         <form onSubmit={onFormSubmited}>
             <div>
-                <label htmlFor={`nom-${id}`}>Nom</label>
-                <input 
-                    id={`nom-${id}`} 
-                    type="text" 
-                    onChange={onNameChanged} 
+                <Input
+                    id={`nom-${id}`}
+                    type="text"
+                    onChange={onNameChanged}
                     value={produit.name}
-                />
+                >Nom</Input>
             </div>
             <div>
-                <label htmlFor={`prix-unitaire-${id}`}>Prix Unitaire</label>
-                <input 
+                <Input 
                     id={`prix-unitaire-${id}`} 
                     type="text" 
                     name="prix_unitaire"
                     onChange={onPrixChanged}
                     value={produit.prix_unitaire}
-                />
+                >
+                    Prix Unitaire
+                </Input>
             </div>
             <div>
-                <label htmlFor={`quantitie-${id}`}>Quantité</label>
-                <input 
+                <Input 
                     id={`quantitie-${id}`} 
                     type="text" 
                     name="quantite"
                     onChange={onQuantiteChanged}
                     value={produit.quantite}
-                />
+                >
+                    Quantité
+                </Input>
             </div>
             <Button type="button" onClick={onCancel}>Annuler</Button>
             <Button type="submit">{submitText?.length ? submitText : "Ajouter Produit"}</Button>
