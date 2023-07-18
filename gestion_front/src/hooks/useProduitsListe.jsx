@@ -51,6 +51,7 @@ export function useProduitsListe() {
 
     function recherche(rechercheText) {
         setRechercheText(rechercheText);
+        setPageNumber(1);
         setAllowUpdate(true);
     }
 
