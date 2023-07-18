@@ -36,21 +36,27 @@ function ProduitForm({
     }
 
     function onNameChanged(event) {
-        setProduit(produit => ({...produit, name: event.target.value.trim()}));
+        setProduit(produit => ({...produit, name: event.target.value}));
     }
 
     function onPrixChanged(event) {
-        setProduit(produit => ({...produit, prix_unitaire: event.target.value.trim()}));
+        setProduit(produit => ({...produit, prix_unitaire: event.target.value}));
     }
 
     function onQuantiteChanged(event) {
-        setProduit(produit => ({...produit, quantite: event.target.value.trim()}));
+        setProduit(produit => ({...produit, quantite: event.target.value}));
     }
 
     function onFormSubmited(event) {
         event.preventDefault();
 
-        validerProduit(produit) && onSubmit && onSubmit(produit)
+        const submitProduit = {
+            name: produit.name.trim(),
+            prix_unitaire: produit.prix_unitaire.trim(),
+            quantite: produit.quantite.trim()
+        };
+
+        validerProduit(submitProduit) && onSubmit && onSubmit(submitProduit)
             .then(result => result && resetInputs());
     }
 
