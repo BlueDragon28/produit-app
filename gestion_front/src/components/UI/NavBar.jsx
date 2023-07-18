@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 import styles from "./NavBar.module.css";
 
 function NavBar() {
     return (
         <header className={styles["nav-bar"]}>
-            <div>Gestion Produits</div>
+            <Link to="/">Gestion Produits</Link>
         </header>
     );
 }

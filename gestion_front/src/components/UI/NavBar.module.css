@@ -1,5 +1,14 @@
 .nav-bar {
     background-color: #212529;
     padding: 1.3rem 1rem;
+}
+
+.nav-bar a {
     color: #e5e5e5;
+    text-decoration: none;
+}
+
+.nav-bar a:hover,
+.nav-bar a:active {
+    text-decoration: underline;
 }
