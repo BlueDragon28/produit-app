@@ -77,6 +77,7 @@ function ProduitForm({
                     id={`prix-unitaire-${id}`} 
                     type="number" 
                     min="0"
+                    max="99999.99"
                     step="0.01"
                     name="prix_unitaire"
                     onChange={onPrixChanged}
