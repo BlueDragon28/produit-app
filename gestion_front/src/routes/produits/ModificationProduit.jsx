@@ -12,11 +12,19 @@ import ErrorCard from "../../components/UI/ErrorCard";
 function ModificationProduit() {
     const navigate = useNavigate();
     const { produitID } = useParams();
-    const produit = useProduitElement(produitID);
+    const [produit, isError] = useProduitElement(produitID);
     const [error, setError] = useState({
         isError: false,
         message: ""
     });
+
+    if (isError) {
+        return (
+            <Card isError={true}>
+                Ce produit n'existe pas!
+            </Card>
+        );
+    }
 
     if (!produit) {
         return <></>;
