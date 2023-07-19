@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 
+/*
+* Hook custom pour récupérer le détail d'un produit
+*/
+
 const produitDetailEndpoint = "/api/produits/";
 
 export function useProduitElement(produitID) {

@@ -6,6 +6,11 @@ import ModificationProduit from "./routes/produits/ModificationProduit";
 
 import './App.css';
 
+/*
+* Router contenant les différentes routes pour créer, récupérer, modifier,
+* supprimer, rechercher un produit.
+*/
+
 const router = createBrowserRouter([
     {
         path: "/",

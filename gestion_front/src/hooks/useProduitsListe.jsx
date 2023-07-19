@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
 
+/*
+* Hook custom pour récupérer la liste de produits paginée en y appliquant la
+* recherche si indiqué.
+*/
+
 const produitsListeEndpoint = "/api/produits";
 
 async function obtenirListeProduits(pageNumber, rechercheText) {

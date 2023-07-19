@@ -3,6 +3,11 @@ import RechercheProduits from "../../components/produit/RechercheProduits";
 import AjouterProduit from "../../components/produit/AjouterProduit";
 import ListeProduits from "../../components/produit/ListeProduits";
 
+/*
+* L'index du site contenant la liste des produits, un formulaire pour ajouter
+* un produit et une barre de recherche.
+*/
+
 function Produits() {
     const [
         produits, 

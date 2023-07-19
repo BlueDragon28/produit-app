@@ -6,6 +6,10 @@ import Card from "../../components/UI/Card";
 import styleButton from "../../components/UI/Button.module.css";
 import style from "./ProduitDetail.module.css";
 
+/*
+* Affiche le détail du produit
+*/
+
 function ProduitDetail() {
     const navigate = useNavigate();
     const { produitID } = useParams();

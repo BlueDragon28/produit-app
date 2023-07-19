@@ -5,6 +5,10 @@ import ProduitForm from "../../components/produit/ProduitForm";
 import Card from "../../components/UI/Card";
 import ErrorCard from "../../components/UI/ErrorCard";
 
+/*
+* Formulaire pour modifier un produit
+*/
+
 function ModificationProduit() {
     const navigate = useNavigate();
     const { produitID } = useParams();
