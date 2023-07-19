@@ -7,7 +7,7 @@ function ProduitElement({ produit }) {
 
     return (
         <Link 
-            class={styles["produit-element"]}
+            className={styles["produit-element"]}
             to={`produit/${id}`}
         >
             <div>{name}</div> <div>{prix_unitaire}€</div>
