@@ -1,8 +1,10 @@
 import styles from "./Card.module.css";
 
-function Card({ children }) {
+function Card({ children, isError }) {
     return (
-        <div className={styles["card"]}>
+        <div 
+            className={`${styles["card"]} ${isError ? styles["card-error"] : ""}`}
+        >
             { children }
         </div>
     )
