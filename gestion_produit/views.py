@@ -1,13 +1,13 @@
 from django.http import HttpResponse
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.filters import SearchFilter
-
-from produit_app.settings import BASE_DIR
+from pathlib import Path
 
 from .models import Produit
 from .serializers import HREFProduitSerializer
 
-index_html_basedir = BASE_DIR / "gestion_front/dist/index.html"
+GESTION_PRODUIT = Path(__file__).resolve().parent
+index_html= GESTION_PRODUIT / "static/index.html"
 
 class ProduitViewSet(ModelViewSet):
     serializer_class = HREFProduitSerializer
@@ -16,7 +16,7 @@ class ProduitViewSet(ModelViewSet):
     search_fields = ["name"]
 
 def index_view(request):
-    with open(index_html_basedir) as f:
+    with open(index_html) as f:
         lines = f.readlines()
 
         content = ""
