@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include
 from rest_framework.routers import SimpleRouter
 
 from gestion_produit.views import ProduitViewSet, index_view
@@ -24,6 +24,6 @@ router = SimpleRouter(trailing_slash=False)
 router.register("produits", ProduitViewSet, "produits")
 
 urlpatterns = [
-    path("", index_view),
     path("api/", include(router.urls)),
+    re_path(r"^(?!\/assets)", index_view),
 ]
