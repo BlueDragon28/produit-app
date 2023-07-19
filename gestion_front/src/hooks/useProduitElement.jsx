@@ -8,6 +8,7 @@ const produitDetailEndpoint = "/api/produits/";
 
 export function useProduitElement(produitID) {
     const [produit, setProduit] = useState(null);
+    const [isError, setIsError] = useState(false);
 
     useEffect(() => {
         fetch(produitDetailEndpoint + produitID, {
@@ -18,12 +19,17 @@ export function useProduitElement(produitID) {
         })
             .then(response => response.json())
             .then(produit => {
+                if (produit?.detail) {
+                    setIsError(true);
+                    return;
+                }
+
                 setProduit(produit);
             })
             .catch(error => {
-                console.err(error);
+                setIsError(true);
             });
     }, [produitID]);
 
-    return produit;
+    return [produit, isError];
 }

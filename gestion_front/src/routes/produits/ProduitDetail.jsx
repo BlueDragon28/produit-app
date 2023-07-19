@@ -13,7 +13,15 @@ import style from "./ProduitDetail.module.css";
 function ProduitDetail() {
     const navigate = useNavigate();
     const { produitID } = useParams();
-    const produit = useProduitElement(produitID);
+    const [produit, isError] = useProduitElement(produitID);
+
+    if (isError) {
+        return (
+            <Card isError={true}>
+                Ce produit n'existe pas!
+            </Card>
+        );
+    }
 
     if (!produit) {
         return <></>;
