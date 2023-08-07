@@ -1,6 +1,6 @@
 # Produit App
 
-Il s'agit d'un petit projet de type CRUD pour valider mon accès au stage en développement en informatique chez Confledis. Les deux parties backend et frontend sont incluses dans ce dépôt. La partie backend est à la racine de ce projet, elle a été réalisée en Python avec Django. Le frontend est dans le dossier gestion_front et a été réalisé avec Reactjs.
+Il s'agit d'un petit projet de type CRUD pour valider mon accès au stage en développement en informatique. Les deux parties backend et frontend sont incluses dans ce dépôt. La partie backend est à la racine de ce projet, elle a été réalisée en Python avec Django. Le frontend est dans le dossier gestion_front et a été réalisé avec Reactjs.
 
 
 ## Installation
